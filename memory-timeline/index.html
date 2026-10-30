@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#060607">
+  <title>Memory Timeline</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#chapters">Skip to chapters</a>
+
+  <!-- Everything inside #experience is rendered from timeline-data.js by script.js -->
+  <div id="experience">
+    <header class="hero" id="hero"></header>
+    <main id="chapters" tabindex="-1"></main>
+    <footer class="closing" id="closing"></footer>
+  </div>
+
+  <!-- Chapter navigation rail (milestones are generated from the same data) -->
+  <nav class="rail" id="rail" aria-label="Memory chapters">
+    <div class="rail__track" aria-hidden="true"><div class="rail__fill" id="railFill"></div></div>
+    <ol class="rail__list" id="railList"></ol>
+  </nav>
+
+  <noscript>
+    <p class="noscript">This page needs JavaScript to build the timeline.</p>
+  </noscript>
+
+  <!--
+    Anime.js v4.5.0 (UMD build, exposes window.anime). Vendored locally so the
+    page works offline. Official CDN equivalent:
+    https://cdn.jsdelivr.net/npm/animejs@4.5.0/dist/bundles/anime.umd.min.js
+  -->
+  <script src="vendor/anime.umd.min.js"></script>
+  <script src="timeline-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
